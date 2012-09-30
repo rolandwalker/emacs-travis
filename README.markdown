@@ -40,6 +40,12 @@ either
    See the `script` and `before_script` sections.  The `before-script` may be
    removed entirely.
 
+Notes
+-----
+
+An XEmacs 21 runtime is also included, but commented out.  The included
+Makefile and test frameworks are also not compatible with XEmacs.
+
 See Also
 --------
 

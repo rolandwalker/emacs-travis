@@ -30,6 +30,7 @@ language: emacs-lisp
 
 env:
   matrix:
+#   - EMACS=xemacs21
     - EMACS=emacs22
     - EMACS=emacs23
     - EMACS=emacs24
@@ -45,6 +46,9 @@ env:
 
 matrix:
   allow_failures:
+#   - env:
+#       - EMACS=xemacs21
+#       - SOME_TOKEN=some_value
     - env:
         - EMACS=emacs22
         - SOME_TOKEN=some_value
@@ -87,6 +91,10 @@ before_install:
   - git submodule --quiet update --init --recursive
 
 install:
+# - if [ "$EMACS" = 'xemacs21' ]; then
+#       sudo apt-get update -qq &&
+#       sudo apt-get install -qq xemacs21-basesupport xemacs21-basesupport-el xemacs21-supportel xemacs21-support xemacs21-mulesupport-el xemacs21-mulesupport xemacs21-mule-canna-wnn xemacs21-mule-canna-wnn;
+#   fi
   - if [ "$EMACS" = "emacs22" ]; then
         curl -Os http://security.ubuntu.com/ubuntu/pool/universe/e/emacs22/emacs22_22.2-0ubuntu9_i386.deb &&
         curl -Os http://security.ubuntu.com/ubuntu/pool/universe/e/emacs22/emacs22-bin-common_22.2-0ubuntu9_i386.deb &&
