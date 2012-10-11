@@ -3,6 +3,8 @@ Overview
 
 Travis CI recipe for Emacs libraries.
 
+![Travis Grid](https://raw.github.com/rolandwalker/emacs-travis/master/travis_grid.png)
+
 Quickstart
 ----------
 
