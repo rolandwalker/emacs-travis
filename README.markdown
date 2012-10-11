@@ -13,6 +13,8 @@ Quickstart
 * Create an account on http://travis-ci.org, and follow the instructions
   there to enable builds.
 
+* Edit travis_grid.pl to match your account if desired.
+
 * Add `[![Build Status](https://secure.travis-ci.org/my-github-id/my-library.png)](http://travis-ci.org/my-github-id/my-library)`
   to your Markdown README file.
 
