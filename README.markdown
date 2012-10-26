@@ -17,7 +17,7 @@ Quickstart
 
 * Edit travis_grid.pl to match your account if desired.
 
-* Add `[![Build Status](https://secure.travis-ci.org/my-github-id/my-library.png)](http://travis-ci.org/my-github-id/my-library)`
+* Add `[![Build Status](https://secure.travis-ci.org/my-github-id/my-library.png?branch=master,staging,production)](http://travis-ci.org/my-github-id/my-library?branch=master,staging,production)`
   to your Markdown README file.
 
 .travis.yml
@@ -54,3 +54,4 @@ See Also
 --------
 
 [http://about.travis-ci.org/docs/user/build-configuration/](http://about.travis-ci.org/docs/user/build-configuration/)
+[http://about.travis-ci.org/docs/user/status-images/](http://about.travis-ci.org/docs/user/status-images/)
