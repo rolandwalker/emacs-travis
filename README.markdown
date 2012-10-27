@@ -53,5 +53,5 @@ Makefile and test frameworks are also not compatible with XEmacs.
 See Also
 --------
 
-[http://about.travis-ci.org/docs/user/build-configuration/](http://about.travis-ci.org/docs/user/build-configuration/)
-[http://about.travis-ci.org/docs/user/status-images/](http://about.travis-ci.org/docs/user/status-images/)
+[http://about.travis-ci.org/docs/user/build-configuration/](http://about.travis-ci.org/docs/user/build-configuration/)  
+[http://about.travis-ci.org/docs/user/status-images/](http://about.travis-ci.org/docs/user/status-images/)  
