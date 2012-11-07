@@ -59,17 +59,20 @@ matrix:
 ###
 ### limit build attempts to defined branches
 ###
-###     branches:
-###       only:
-###         - master
+### notes
 ###
-### - If you do not wish all branches to affect the web badge, but
-###   still wish all branches to build, you can limit the branches
-###   that affect the web badge by appending
-###   "?branch=master,staging,production" to the end of the image URL
-###   (replacing "master,staging,production" with a comma separated
-###   list of branches).
+### This controls which branches are built.
 ###
+### You can also control which branches affect the web badge, by
+### appending "?branch=master,staging,production" to the end of the
+### image URL (replacing "master,staging,production" with a
+### comma-separated list of branches to be reflected in the badge).
+###
+#
+#  branches:
+#    only:
+#      - master
+#
 
 ###
 ### runtime initialization
