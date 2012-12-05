@@ -7,7 +7,8 @@
 #
 # How to use
 #
-#   1. Add your travis username where indicated in $travis_base
+#   1. Add your travis username where indicated in $travis_api_base
+#      and $travis_browser_base
 #
 #   2. Add all desired repository names below __DATA__
 #
@@ -48,7 +49,8 @@ use JSON;
 ### configurable file-scoped lexical variables
 ###
 
-my $travis_base  = "https://travis-ci.org/YOUR_USER_NAME_HERE";
+my $travis_api_base     = "https://api.travis-ci.org/repos/YOUR_USER_NAME_HERE";
+my $travis_browser_base = "http://travis-ci.org/YOUR_USER_NAME_HERE";
 
 ###
 ### argument processing
@@ -74,7 +76,8 @@ while (<DATA>) {
     $longest_repo = length $_ if length $_ > $longest_repo;
 }
 
-die "add your username to the \$travis_base variable\n"   if $travis_base =~ m/YOUR_USER_NAME/;
+die "add your username to the \$travis_api_base variable\n"     if     $travis_api_base =~ m/YOUR_USER_NAME/;
+die "add your username to the \$travis_browser_base variable\n" if $travis_browser_base =~ m/YOUR_USER_NAME/;
 die "add some repository names below the __DATA__ line\n" unless @repos;
 
 ###
@@ -82,7 +85,7 @@ die "add some repository names below the __DATA__ line\n" unless @repos;
 ###
 
 foreach my $repo (@repos) {
-    my $json = get "${travis_base}/${repo}.json" or die "fetch failed in $repo\n";
+    my $json = get "${travis_api_base}/${repo}.json" or die "fetch failed in $repo\n";
        $json = from_json $json;
     my $status = $json->{last_build_status};
     print $repo;
@@ -96,7 +99,7 @@ foreach my $repo (@repos) {
     }
     if (($status eq "0") or $status > 0) {
         my $build_id = $json->{last_build_id};
-        $json = get "${travis_base}/${repo}/builds/${build_id}.json" or die "fetch failed in $repo\n";
+        $json = get "${travis_api_base}/${repo}/builds/${build_id}.json" or die "fetch failed in $repo\n";
         $json = from_json $json;
         print " |";
         foreach my $m (reverse @{$json->{matrix}}) {
@@ -110,7 +113,7 @@ foreach my $repo (@repos) {
                 print ((color "bold red"), " ", $emacs, (color "reset"));
             }
             if ($status > 0) {
-                print ((color "bold red"), " -- $travis_base/$repo", (color "reset"));
+                print ((color "bold red"), " -- $travis_browser_base/$repo", (color "reset"));
             }
         }
         print "\n";
