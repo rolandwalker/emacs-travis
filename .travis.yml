@@ -138,6 +138,8 @@ before_script:
 ###
 ### the actual build/test command
 ###
+### (use "make test-batch" to test without byte-compiling)
+###
 
 script:
   "$EMACS" --version && make test EMACS="$EMACS"
