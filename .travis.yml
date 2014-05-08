@@ -138,7 +138,8 @@ before_script:
 ###
 ### the actual build/test command
 ###
-### (use "make test-batch" to test without byte-compiling)
+### Use "make test-batch" to test without byte-compiling.
+### The default command avoids byte-compiling on Emacs 22.
 ###
 
 script:
