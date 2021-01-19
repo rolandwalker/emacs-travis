@@ -30,7 +30,7 @@
 ###
 
 env:
-  matrix:
+  jobs:
 #   - EMACS=xemacs21
     - EMACS=emacs22
     - EMACS=emacs23
@@ -44,7 +44,7 @@ env:
 ### allowing build failures
 ###
 
-matrix:
+jobs:
   allow_failures:
 #   - env: EMACS=xemacs21
     - env: EMACS=emacs22
